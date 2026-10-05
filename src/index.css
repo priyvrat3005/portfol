@@ -4,6 +4,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure Three.js canvas is properly positioned */
+canvas {
+  display: block;
+  touch-action: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -26,4 +32,28 @@ html {
 ::selection {
   background-color: rgba(99, 102, 241, 0.2);
   color: inherit;
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[src] {
+  opacity: 1;
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
